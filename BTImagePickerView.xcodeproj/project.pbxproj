@@ -1,0 +1,339 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		148D594E1E9CDF72006BB83A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 148D594D1E9CDF72006BB83A /* main.m */; };
+		148D59511E9CDF72006BB83A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 148D59501E9CDF72006BB83A /* AppDelegate.m */; };
+		148D59541E9CDF72006BB83A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148D59531E9CDF72006BB83A /* ViewController.m */; };
+		148D59571E9CDF72006BB83A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 148D59551E9CDF72006BB83A /* Main.storyboard */; };
+		148D59591E9CDF72006BB83A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 148D59581E9CDF72006BB83A /* Assets.xcassets */; };
+		148D595C1E9CDF72006BB83A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 148D595A1E9CDF72006BB83A /* LaunchScreen.storyboard */; };
+		148D59661E9CDFB1006BB83A /* BTNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148D59651E9CDFB1006BB83A /* BTNaviViewController.m */; };
+		148D59691E9CDFC6006BB83A /* BTImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148D59681E9CDFC6006BB83A /* BTImagePickerViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		148D59491E9CDF72006BB83A /* BTImagePickerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTImagePickerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		148D594D1E9CDF72006BB83A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		148D594F1E9CDF72006BB83A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		148D59501E9CDF72006BB83A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		148D59521E9CDF72006BB83A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		148D59531E9CDF72006BB83A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		148D59561E9CDF72006BB83A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		148D59581E9CDF72006BB83A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		148D595B1E9CDF72006BB83A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		148D595D1E9CDF72006BB83A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		148D59641E9CDFB1006BB83A /* BTNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTNaviViewController.h; sourceTree = "<group>"; };
+		148D59651E9CDFB1006BB83A /* BTNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTNaviViewController.m; sourceTree = "<group>"; };
+		148D59671E9CDFC6006BB83A /* BTImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTImagePickerViewController.h; sourceTree = "<group>"; };
+		148D59681E9CDFC6006BB83A /* BTImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTImagePickerViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		148D59461E9CDF72006BB83A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		148D59401E9CDF72006BB83A = {
+			isa = PBXGroup;
+			children = (
+				148D594B1E9CDF72006BB83A /* BTImagePickerView */,
+				148D594A1E9CDF72006BB83A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		148D594A1E9CDF72006BB83A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				148D59491E9CDF72006BB83A /* BTImagePickerView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		148D594B1E9CDF72006BB83A /* BTImagePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				148D59631E9CDF7D006BB83A /* BTImagePicker */,
+				148D594F1E9CDF72006BB83A /* AppDelegate.h */,
+				148D59501E9CDF72006BB83A /* AppDelegate.m */,
+				148D59521E9CDF72006BB83A /* ViewController.h */,
+				148D59531E9CDF72006BB83A /* ViewController.m */,
+				148D59551E9CDF72006BB83A /* Main.storyboard */,
+				148D59581E9CDF72006BB83A /* Assets.xcassets */,
+				148D595A1E9CDF72006BB83A /* LaunchScreen.storyboard */,
+				148D595D1E9CDF72006BB83A /* Info.plist */,
+				148D594C1E9CDF72006BB83A /* Supporting Files */,
+			);
+			path = BTImagePickerView;
+			sourceTree = "<group>";
+		};
+		148D594C1E9CDF72006BB83A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				148D594D1E9CDF72006BB83A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		148D59631E9CDF7D006BB83A /* BTImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				148D59641E9CDFB1006BB83A /* BTNaviViewController.h */,
+				148D59651E9CDFB1006BB83A /* BTNaviViewController.m */,
+				148D59671E9CDFC6006BB83A /* BTImagePickerViewController.h */,
+				148D59681E9CDFC6006BB83A /* BTImagePickerViewController.m */,
+			);
+			path = BTImagePicker;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		148D59481E9CDF72006BB83A /* BTImagePickerView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 148D59601E9CDF72006BB83A /* Build configuration list for PBXNativeTarget "BTImagePickerView" */;
+			buildPhases = (
+				148D59451E9CDF72006BB83A /* Sources */,
+				148D59461E9CDF72006BB83A /* Frameworks */,
+				148D59471E9CDF72006BB83A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BTImagePickerView;
+			productName = BTImagePickerView;
+			productReference = 148D59491E9CDF72006BB83A /* BTImagePickerView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		148D59411E9CDF72006BB83A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = tyb;
+				TargetAttributes = {
+					148D59481E9CDF72006BB83A = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = UN2WPZM7E9;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 148D59441E9CDF72006BB83A /* Build configuration list for PBXProject "BTImagePickerView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 148D59401E9CDF72006BB83A;
+			productRefGroup = 148D594A1E9CDF72006BB83A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				148D59481E9CDF72006BB83A /* BTImagePickerView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		148D59471E9CDF72006BB83A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				148D595C1E9CDF72006BB83A /* LaunchScreen.storyboard in Resources */,
+				148D59591E9CDF72006BB83A /* Assets.xcassets in Resources */,
+				148D59571E9CDF72006BB83A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		148D59451E9CDF72006BB83A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				148D59661E9CDFB1006BB83A /* BTNaviViewController.m in Sources */,
+				148D59691E9CDFC6006BB83A /* BTImagePickerViewController.m in Sources */,
+				148D59541E9CDF72006BB83A /* ViewController.m in Sources */,
+				148D59511E9CDF72006BB83A /* AppDelegate.m in Sources */,
+				148D594E1E9CDF72006BB83A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		148D59551E9CDF72006BB83A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				148D59561E9CDF72006BB83A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		148D595A1E9CDF72006BB83A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				148D595B1E9CDF72006BB83A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		148D595E1E9CDF72006BB83A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		148D595F1E9CDF72006BB83A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		148D59611E9CDF72006BB83A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UN2WPZM7E9;
+				INFOPLIST_FILE = BTImagePickerView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dansltech.BTImagePickerView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		148D59621E9CDF72006BB83A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UN2WPZM7E9;
+				INFOPLIST_FILE = BTImagePickerView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dansltech.BTImagePickerView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		148D59441E9CDF72006BB83A /* Build configuration list for PBXProject "BTImagePickerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				148D595E1E9CDF72006BB83A /* Debug */,
+				148D595F1E9CDF72006BB83A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		148D59601E9CDF72006BB83A /* Build configuration list for PBXNativeTarget "BTImagePickerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				148D59611E9CDF72006BB83A /* Debug */,
+				148D59621E9CDF72006BB83A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 148D59411E9CDF72006BB83A /* Project object */;
+}
