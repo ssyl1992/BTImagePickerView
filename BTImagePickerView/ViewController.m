@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "BTNaviViewController.h"
+
 #import "BTImagePickerViewController.h"
 
 @interface ViewController ()
@@ -29,9 +29,13 @@
 
 - (IBAction)click:(id)sender {
     BTImagePickerViewController *ipVC = [[BTImagePickerViewController alloc] init];
+    ipVC.completed = ^(NSArray *images){
+        NSLog(@"%@",images);
+    };
     
     
-    BTNaviViewController *navi = [[BTNaviViewController alloc] initWithRootViewController:ipVC];
+    
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:ipVC];
     
     [self presentViewController:navi animated:YES completion:nil];
     

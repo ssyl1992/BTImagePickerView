@@ -21,25 +21,26 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        
         [self loadViews];
-
     }
     return self;
 }
 
 - (void)loadViews {
+    
     UIImageView *imageView = [[UIImageView alloc] init];
     [self.contentView addSubview:imageView];
     self.imageView = imageView;
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.clipsToBounds = YES;
     [self.contentView bringSubviewToFront:imageView];
     
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.contentView addSubview:button];
     self.selectedButton = button;
-    [button setBackgroundImage:[UIImage imageNamed:@"unchecked"] forState:UIControlStateNormal];
-    [button setBackgroundImage:[UIImage imageNamed:@"checked"] forState:UIControlStateSelected];
+    [button setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:@"select"] forState:UIControlStateSelected];
     button.selected = self.btnSelect;
 }
 

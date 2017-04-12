@@ -13,11 +13,12 @@
 		148D59571E9CDF72006BB83A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 148D59551E9CDF72006BB83A /* Main.storyboard */; };
 		148D59591E9CDF72006BB83A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 148D59581E9CDF72006BB83A /* Assets.xcassets */; };
 		148D595C1E9CDF72006BB83A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 148D595A1E9CDF72006BB83A /* LaunchScreen.storyboard */; };
-		148D59661E9CDFB1006BB83A /* BTNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148D59651E9CDFB1006BB83A /* BTNaviViewController.m */; };
 		148D59691E9CDFC6006BB83A /* BTImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148D59681E9CDFC6006BB83A /* BTImagePickerViewController.m */; };
 		148D596F1E9CF69B006BB83A /* ImagePickerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 148D596E1E9CF69B006BB83A /* ImagePickerItem.m */; };
 		148D59711E9CF851006BB83A /* icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 148D59701E9CF851006BB83A /* icon.xcassets */; };
 		148D59741E9D1805006BB83A /* ImagePickerCameraItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 148D59731E9D1805006BB83A /* ImagePickerCameraItem.m */; };
+		B599AB751E9DBBFC00E14207 /* SelectedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B599AB741E9DBBFC00E14207 /* SelectedItem.m */; };
+		B599AB771E9DC9D300E14207 /* BTImagePicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B599AB761E9DC9D300E14207 /* BTImagePicker.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +32,6 @@
 		148D59581E9CDF72006BB83A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		148D595B1E9CDF72006BB83A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		148D595D1E9CDF72006BB83A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		148D59641E9CDFB1006BB83A /* BTNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTNaviViewController.h; sourceTree = "<group>"; };
-		148D59651E9CDFB1006BB83A /* BTNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTNaviViewController.m; sourceTree = "<group>"; };
 		148D59671E9CDFC6006BB83A /* BTImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTImagePickerViewController.h; sourceTree = "<group>"; };
 		148D59681E9CDFC6006BB83A /* BTImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTImagePickerViewController.m; sourceTree = "<group>"; };
 		148D596D1E9CF69B006BB83A /* ImagePickerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerItem.h; sourceTree = "<group>"; };
@@ -40,6 +39,9 @@
 		148D59701E9CF851006BB83A /* icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = icon.xcassets; sourceTree = "<group>"; };
 		148D59721E9D1805006BB83A /* ImagePickerCameraItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerCameraItem.h; sourceTree = "<group>"; };
 		148D59731E9D1805006BB83A /* ImagePickerCameraItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerCameraItem.m; sourceTree = "<group>"; };
+		B599AB731E9DBBFC00E14207 /* SelectedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedItem.h; sourceTree = "<group>"; };
+		B599AB741E9DBBFC00E14207 /* SelectedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedItem.m; sourceTree = "<group>"; };
+		B599AB761E9DC9D300E14207 /* BTImagePicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BTImagePicker.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,14 +99,15 @@
 		148D59631E9CDF7D006BB83A /* BTImagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				148D59641E9CDFB1006BB83A /* BTNaviViewController.h */,
-				148D59651E9CDFB1006BB83A /* BTNaviViewController.m */,
 				148D59671E9CDFC6006BB83A /* BTImagePickerViewController.h */,
 				148D59681E9CDFC6006BB83A /* BTImagePickerViewController.m */,
 				148D596D1E9CF69B006BB83A /* ImagePickerItem.h */,
 				148D596E1E9CF69B006BB83A /* ImagePickerItem.m */,
 				148D59721E9D1805006BB83A /* ImagePickerCameraItem.h */,
 				148D59731E9D1805006BB83A /* ImagePickerCameraItem.m */,
+				B599AB731E9DBBFC00E14207 /* SelectedItem.h */,
+				B599AB741E9DBBFC00E14207 /* SelectedItem.m */,
+				B599AB761E9DC9D300E14207 /* BTImagePicker.bundle */,
 				148D59701E9CF851006BB83A /* icon.xcassets */,
 			);
 			path = BTImagePicker;
@@ -172,6 +175,7 @@
 				148D595C1E9CDF72006BB83A /* LaunchScreen.storyboard in Resources */,
 				148D59591E9CDF72006BB83A /* Assets.xcassets in Resources */,
 				148D59711E9CF851006BB83A /* icon.xcassets in Resources */,
+				B599AB771E9DC9D300E14207 /* BTImagePicker.bundle in Resources */,
 				148D59571E9CDF72006BB83A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,7 +189,7 @@
 			files = (
 				148D59741E9D1805006BB83A /* ImagePickerCameraItem.m in Sources */,
 				148D596F1E9CF69B006BB83A /* ImagePickerItem.m in Sources */,
-				148D59661E9CDFB1006BB83A /* BTNaviViewController.m in Sources */,
+				B599AB751E9DBBFC00E14207 /* SelectedItem.m in Sources */,
 				148D59691E9CDFC6006BB83A /* BTImagePickerViewController.m in Sources */,
 				148D59541E9CDF72006BB83A /* ViewController.m in Sources */,
 				148D59511E9CDF72006BB83A /* AppDelegate.m in Sources */,
@@ -348,6 +352,7 @@
 				148D59621E9CDF72006BB83A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

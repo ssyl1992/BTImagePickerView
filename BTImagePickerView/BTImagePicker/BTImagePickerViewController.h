@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+
+typedef void(^CompletedButtonClick)(NSArray *images);
+
 @interface BTImagePickerViewController : UIViewController
+
+@property (nonatomic, copy) CompletedButtonClick completed;
+@property (nonatomic, assign) NSInteger maxCount;
 
 @end

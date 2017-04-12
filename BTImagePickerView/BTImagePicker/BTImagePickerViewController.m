@@ -10,6 +10,7 @@
 #import "ImagePickerItem.h"
 #import <Photos/Photos.h>
 #import "ImagePickerCameraItem.h"
+#import "SelectedItem.h"
 
 
 
@@ -20,12 +21,13 @@
 #define kSelectViewH 120.0f
 #define ItemSpace 1.0f
 
-@interface BTImagePickerViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,PHPhotoLibraryChangeObserver>
+@interface BTImagePickerViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,PHPhotoLibraryChangeObserver,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
-@property (nonatomic, assign) NSInteger maxCount;
+
 @property (nonatomic, assign) NSInteger currentCount;
 @property (nonatomic, copy) NSMutableArray *images;
 @property (nonatomic, copy) NSMutableArray *selectedIndexPath;
+@property (nonatomic, copy) NSMutableArray *selectedImages;
 
 @end
 
@@ -51,6 +53,8 @@
         [self layoutSelectionView];
         self.maxCount = 12;
         self.currentCount = 0;
+        
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain  target:self action:@selector(cancelButtonClick:)];
     }
     return self;
 }
@@ -60,6 +64,13 @@
         _images = [NSMutableArray array];
     }
     return _images;
+}
+
+- (NSMutableArray *)selectedImages {
+    if (_selectedImages == nil) {
+        _selectedImages = [NSMutableArray array];
+    }
+    return _selectedImages;
 }
 
 - (NSMutableArray *)selectedIndexPath {
@@ -105,7 +116,8 @@
 - (void)layoutSelectionView {
     selectedView = [[UIScrollView alloc] init];
     selectedView.frame = CGRectMake(0, kCollectionViewH, KScreenW - kSelectViewH * 0.5, kSelectViewH);
-    selectedView.backgroundColor = [UIColor yellowColor];
+    selectedView.backgroundColor = [UIColor blackColor];
+   
     [self.view addSubview:selectedView];
     
 }
@@ -137,7 +149,9 @@
 
 
 - (void)photoLibraryDidChange:(PHChange *)changeInstance {
-    NSLog(@"%@",changeInstance);
+    [self.images removeAllObjects];
+    [self getAllAssetInPhotoAblumWithAscending:NO];
+  
    
 }
 
@@ -153,15 +167,18 @@
 
             [result enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 PHAsset *asset = (PHAsset *)obj;
-                NSLog(@"照片名%@", [asset valueForKey:@"filename"]);
                 [self.images addObject:asset];
             }];
-     
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+               [imageCollectionView reloadData];
+            });
+            
         }else {
             NSLog(@"获取相册权限失败");
         }
     }];
-    [imageCollectionView reloadData];
+   
     return assets;
 }
 
@@ -220,21 +237,26 @@
     // 如果选择拍照
     if (indexPath.row == 0) {
         
-        NSLog(@"拍照");
-        
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        picker.delegate = self;
+        [self presentViewController:picker animated:YES completion:nil];
     }else {
         if ([self.selectedIndexPath containsObject:indexPath]) {
             [self.selectedIndexPath removeObject:indexPath];
             self.currentCount -= 1;
-            
         }else {
-            [self.selectedIndexPath addObject:indexPath];
-             self.currentCount += 1;
+            if (self.selectedIndexPath.count < self.maxCount) {
+                [self.selectedIndexPath addObject:indexPath];
+                self.currentCount += 1;
+            }else{
+                return;
+            }
         }
-        [collectionView reloadData];
     }
-    
 
+    [collectionView reloadData];
+    [self settupScrollView];
 
 }
 
@@ -257,7 +279,85 @@
 
 #pragma mark --- click
 - (void)finishedButtonClick:(UIButton *)sender {
-    NSLog(@"%s",__func__);
+    self.completed(self.selectedImages);
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (void)cancelButtonClick:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma mark --- UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+
+    NSString *mediaType = info[@"UIImagePickerControllerMediaType"];
+    if ([mediaType isEqualToString:@"public.image"]) {  //判断是否为图片
+        
+        UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        //通过判断picker的sourceType，如果是拍照则保存到相册去
+        if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+            UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+        }
+    }
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    
+    NSMutableArray *updateIndexPaths = [NSMutableArray array];
+    for (NSIndexPath *indexPath in self.selectedIndexPath) {
+     NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
+        [updateIndexPaths addObject:newIndexPath];
+        
+    }
+    self.selectedIndexPath = updateIndexPaths;
+    
+    
+    
+}
+
+#pragma mark --- settupScrollView
+- (void)settupScrollView {
+    
+    [self.selectedImages removeAllObjects];
+    [selectedView removeFromSuperview];
+    [self layoutSelectionView];
+    
+    CGFloat itemWH = kSelectViewH - 2 * ItemSpace;
+    
+    for (int i = 0; i < self.selectedIndexPath.count; i++) {
+        NSIndexPath *indexPath = self.selectedIndexPath[i];
+        PHAsset *asset = [self.images objectAtIndex:indexPath.row-1];
+        UIImage *image = [self fetchImageFromAssets:asset];
+        [self.selectedImages addObject:image];
+        
+        SelectedItem *item = [[SelectedItem alloc] initWithImage:image deleteClick:^(UIView *view) {
+            [self.selectedIndexPath removeObject:indexPath];
+            [self.selectedImages removeObject:image];
+            if (self.currentCount != 0) {
+                self.currentCount -= 1;
+            }
+            [imageCollectionView reloadData];
+            [self settupScrollView];
+            
+        }];
+        item.frame = CGRectMake(ItemSpace + (itemWH + ItemSpace) * i, ItemSpace, itemWH, itemWH);
+        
+        [selectedView addSubview:item];
+        
+        selectedView.contentSize = CGSizeMake((itemWH + ItemSpace) * i + itemWH, kSelectViewH);
+        if ((itemWH + ItemSpace) * i + itemWH > selectedView.frame.size.width) {
+             selectedView.contentOffset = CGPointMake((itemWH + ItemSpace) * i + itemWH - selectedView.frame.size.width, 0);
+        }
+       
+
+    }
+    
+  
+}
+
+
+
 
 @end
